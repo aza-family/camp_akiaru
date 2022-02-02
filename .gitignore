@@ -1,0 +1,6 @@
+vendor/bundle
+bundle
+site-packages
+.env
+*.pyc 
+__pycache__/*
