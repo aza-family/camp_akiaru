@@ -11,7 +11,12 @@ from slack import Slack
 class SearchAndNotify:
 
     def __init__(self, url, month=None):
-        res = requests.get(url)
+        #print("month:",month)
+        # curl -X POST -d 'f_nengetsu=2022年3月' https://fumotoppara.secure.force.com/RS_Top
+        #response = requests.post('http://www.example.com', data={'foo': 'bar'})
+        #res = requests.get(url)
+        res = requests.post(url, data={'f_nengetsu': month})
+
         self.soup = BeautifulSoup(res.text, 'html.parser', from_encoding='utf-8')
 
     def run(self):
