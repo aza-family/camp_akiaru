@@ -1,5 +1,12 @@
-#coding: UTF-8
+# -*- coding: utf_8 -*-
+#import sys,io
+#print(sys.getdefaultencoding())
+#sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
+#import sys, codecs
+#sys.stdout = codecs.getwriter("utf-8")(sys.stdout)
+
+#sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 import slackweb
 # import requests
 import settings
@@ -13,9 +20,9 @@ SLACK_USER='キャンプ空き警報発令！！'
 
 class Slack:
 
-    def __init__(self, type):
-        self.type = type
-        self.txt = "土曜日に{}空きが見つけました!!".format(type)
+    def __init__(self, camp, status, month, day, day_of_week):
+        #self.type = status
+        self.txt = "{}に{}{}日({}曜日){}空きを見つけました!!".format(camp, month, day, day_of_week,status)
         self.url = "https://fumotoppara.secure.force.com/RS_Top"
 
         # self.url = ""
