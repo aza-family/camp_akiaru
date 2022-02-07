@@ -20,7 +20,7 @@ class SearchAndNotify:
         camp_x = None
         sankaku_text='△'
         maru_text='○'
-        day_of_week = '木'
+        day_of_week = '土'
         camp_site = 'キャンプサイト'
         month = self.soup.find('option', selected=True).string
 
